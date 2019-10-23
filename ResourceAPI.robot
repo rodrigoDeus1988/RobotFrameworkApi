@@ -8,7 +8,6 @@ Library            Collections
 ${URL_API}               https://localhost:5000/api/
 
 
-
 *** Keywords ***
 ### SETUP E TEARDOWNS ###
 Conectar a minha API

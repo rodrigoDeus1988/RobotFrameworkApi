@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20191023 12:14:23.600" generator="Robot 3.1.2 (Python 2.7.15+ on linux2)">
+<suite source="/home/rodrigo/Documents/Git/RobotFrameworkApi/TestCase.robot" id="s1" name="TestCase">
+<test id="s1-t1" name="CTOO1 - Consultar todos membres (GET)">
+<kw name="consultar membres" library="ResourceAPI">
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>Testsapi</arg>
+<arg>teams</arg>
+</arguments>
+<assign>
+<var>${RESPOSTA}</var>
+</assign>
+<msg timestamp="20191023 12:14:23.871" level="FAIL">Non-existing index or alias 'Testsapi'.</msg>
+<status status="FAIL" endtime="20191023 12:14:23.871" starttime="20191023 12:14:23.870"></status>
+</kw>
+<status status="FAIL" endtime="20191023 12:14:23.871" starttime="20191023 12:14:23.870"></status>
+</kw>
+<status status="FAIL" endtime="20191023 12:14:23.875" critical="yes" starttime="20191023 12:14:23.869">Non-existing index or alias 'Testsapi'.</status>
+</test>
+<doc>Documentacao da API: http://localhost:5000/api/ui</doc>
+<status status="FAIL" endtime="20191023 12:14:23.876" starttime="20191023 12:14:23.615"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="TestCase" pass="0">TestCase</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20191023 12:14:23.574" level="ERROR">Error in file '/home/rodrigo/Documents/Git/RobotFrameworkApi/TestCase.robot': Non-existing setting 'Suite Stup'.</msg>
+</errors>
+</robot>

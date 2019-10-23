@@ -1,8 +1,7 @@
 *** Settings ***
 Documentation      Documentacao da API: http://localhost:5000/api/ui
-Resource           ResourceAPI.robot 
+Resource           ResourceAPI.robot
 Suite Stup         Conectar a minha API
-
 
 
 *** Test Case ***
