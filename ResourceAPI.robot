@@ -1,17 +1,17 @@
 *** Settings ***
-Documentation      Documentacao da API: https://localhost:5000/api/ui
+Documentation      Documentacao da API: https://localhost:5000/api
 Library            RequestsLibrary
-Library            Collections
+Library            Collections 
 
 
 *** Variables ***
-${URL_API}               https://localhost:5000/api/
+${URLAPI}               http://localhost:5000/api/
 
 
 *** Keywords ***
 ### SETUP E TEARDOWNS ###
 Conectar a minha API
-      Create Session    Testsapi    ${URL_API}
+   Create Session      Testsapi    ${URLAPI}
 
 
 ###Acoes ###
