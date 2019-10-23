@@ -1,5 +1,5 @@
 *** Settings ***
-Library  
+Library
 
 
 *** Variables ***
@@ -7,4 +7,4 @@ ${BROWSER}
 ${URL}
 
 
-*** Keywords ***
+*** Keywords *** 
