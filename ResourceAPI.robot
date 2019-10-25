@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation      Documentacao da API: https://localhost:5000/api
 Library            RequestsLibrary
-Library            Collections 
+Library            Collections
 
 
 *** Variables ***
