@@ -23,5 +23,5 @@ consultar membres
 
 ###Conferencias
 conferir status code
-  [Arguments]              ${STATUSCODE_DESEJADO}
+  [Arguments]                   ${STATUSCODE_DESEJADO}
   Should Be Equal As Strings    ${RESPOSTA.status_code}    ${STATUSCODE_DESEJADO}
