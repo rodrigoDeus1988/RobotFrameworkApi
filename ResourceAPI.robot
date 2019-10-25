@@ -16,5 +16,12 @@ Conectar a minha API
 
 ###Acoes ###
 consultar membres
-    ${RESPOSTA}        Get Request    Testsapi    teams
-    Log                ${RESPOSTA.text}
+    ${RESPOSTA}             Get Request    Testsapi    teams
+    Log                     ${RESPOSTA.text}
+    Set Test Variable       ${RESPOSTA}
+
+
+###Conferencias
+conferir status code
+  [Arguments]              ${STATUSCODE_DESEJADO}
+  Should Be Equal As Strings    ${RESPOSTA.status_code}    ${STATUSCODE_DESEJADO}
