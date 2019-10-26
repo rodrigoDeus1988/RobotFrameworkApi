@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20191026 09:37:41.123" generator="Robot 3.1.2 (Python 2.7.15+ on linux2)">
+<suite source="/home/rodrigo/Documents/Git/RobotFrameworkApi/TestCase.robot" id="s1" name="TestCase">
+<kw type="setup" name="Conectar a minha API" library="ResourceAPI">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>Testsapi</arg>
+<arg>${URLAPI}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.522" level="INFO">Creating Session using : alias=Testsapi, url=http://localhost:5000/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20191026 09:37:41.523" starttime="20191026 09:37:41.522"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.523" starttime="20191026 09:37:41.522"></status>
+</kw>
+<test id="s1-t1" name="CTO1 - Cadastrar members - (POST)">
+<kw name="Cadastrar um novo members" library="ResourceAPI">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>content-type=application/json</arg>
+</arguments>
+<assign>
+<var>${HEADERS}</var>
+</assign>
+<msg timestamp="20191026 09:37:41.536" level="INFO">${HEADERS} = {u'content-type': u'application/json'}</msg>
+<status status="PASS" endtime="20191026 09:37:41.536" starttime="20191026 09:37:41.536"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>Testsapi</arg>
+<arg>teams</arg>
+<arg>data={{"creator": 1,"description": "Teste_1","id": "1","members": [{}],"name": "TI","profile_photo": "Perfil"}}</arg>
+<arg>headers=${HEADERS}</arg>
+</arguments>
+<assign>
+<var>${RESPOSTA}</var>
+</assign>
+<msg timestamp="20191026 09:37:41.537" level="INFO">POST Request using : uri=teams, files=None, params=None, timeout=None, allow_redirects=True
+headers={'Connection': 'keep-alive', u'content-type': u'application/json', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.22.0'} 
+data="{{\"creator\": 1,\"description\": \"Teste_1\",\"id\": \"1\",\"members\": [{}],\"name\": \"TI\",\"profile_photo\": \"Perfil\"}}" 
+json=None</msg>
+<msg timestamp="20191026 09:37:41.565" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20191026 09:37:41.573" starttime="20191026 09:37:41.537"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESPOSTA.text}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.574" level="INFO">{
+  "detail": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.",
+  "status": 404,
+  "title": "Not Found",
+  "type": "about:blank"
+}
+</msg>
+<status status="PASS" endtime="20191026 09:37:41.574" starttime="20191026 09:37:41.573"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${RESPOSTA}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.578" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20191026 09:37:41.578" starttime="20191026 09:37:41.578"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.578" starttime="20191026 09:37:41.535"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.580" critical="yes" starttime="20191026 09:37:41.523"></status>
+</test>
+<test id="s1-t2" name="CTO2 - Consultar todos members - (GET)">
+<kw name="Consultar members" library="ResourceAPI">
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>Testsapi</arg>
+<arg>teams</arg>
+</arguments>
+<assign>
+<var>${RESPOSTA}</var>
+</assign>
+<msg timestamp="20191026 09:37:41.607" level="INFO">GET Request using : uri=teams, params=None, timeout=None, allow_redirects=True
+headers={'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.22.0'} 
+data=None 
+json=None</msg>
+<msg timestamp="20191026 09:37:41.623" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20191026 09:37:41.623" starttime="20191026 09:37:41.590"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESPOSTA.text}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.624" level="INFO">{
+  "detail": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.",
+  "status": 404,
+  "title": "Not Found",
+  "type": "about:blank"
+}
+</msg>
+<status status="PASS" endtime="20191026 09:37:41.624" starttime="20191026 09:37:41.623"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${RESPOSTA}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.626" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20191026 09:37:41.627" starttime="20191026 09:37:41.626"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.627" starttime="20191026 09:37:41.590"></status>
+</kw>
+<kw name="conferir status code" library="ResourceAPI">
+<arguments>
+<arg>404</arg>
+</arguments>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${STATUSCODE_DESEJADO}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.636" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20191026 09:37:41.636" starttime="20191026 09:37:41.636"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.637" starttime="20191026 09:37:41.635"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.646" critical="yes" starttime="20191026 09:37:41.588"></status>
+</test>
+<test id="s1-t3" name="CTO3 - Consultar members ID - (GET)">
+<kw name="Consultar por id &quot;1&quot;" library="ResourceAPI">
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>Testsapi</arg>
+<arg>teams/${ID_MEMBERS}</arg>
+</arguments>
+<assign>
+<var>${RESPOSTA}</var>
+</assign>
+<msg timestamp="20191026 09:37:41.650" level="INFO">GET Request using : uri=teams/1, params=None, timeout=None, allow_redirects=True
+headers={'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.22.0'} 
+data=None 
+json=None</msg>
+<msg timestamp="20191026 09:37:41.674" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20191026 09:37:41.675" starttime="20191026 09:37:41.649"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESPOSTA.text}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.678" level="INFO">{
+  "detail": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.",
+  "status": 404,
+  "title": "Not Found",
+  "type": "about:blank"
+}
+</msg>
+<status status="PASS" endtime="20191026 09:37:41.679" starttime="20191026 09:37:41.675"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${RESPOSTA}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.682" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20191026 09:37:41.682" starttime="20191026 09:37:41.682"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.686" starttime="20191026 09:37:41.649"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.687" critical="yes" starttime="20191026 09:37:41.648"></status>
+</test>
+<test id="s1-t4" name="CTO4 - Alterar members - (PUT)">
+<kw name="Alterar um novo members &quot;1&quot;" library="ResourceAPI">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>content-type=application/json</arg>
+</arguments>
+<assign>
+<var>${HEADERS}</var>
+</assign>
+<msg timestamp="20191026 09:37:41.692" level="INFO">${HEADERS} = {u'content-type': u'application/json'}</msg>
+<status status="PASS" endtime="20191026 09:37:41.692" starttime="20191026 09:37:41.692"></status>
+</kw>
+<kw name="Put Request" library="RequestsLibrary">
+<doc>Send a PUT request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>Testsapi</arg>
+<arg>teams/${ID_MEMBERS}</arg>
+<arg>data={{"Name": "teste3"}}</arg>
+<arg>headers=${HEADERS}</arg>
+</arguments>
+<assign>
+<var>${RESPOSTA}</var>
+</assign>
+<msg timestamp="20191026 09:37:41.693" level="INFO">PUT Request using : uri=teams/1, files=None, params=None, timeout=None, allow_redirects=True
+headers={'Connection': 'keep-alive', u'content-type': u'application/json', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.22.0'} 
+data="{{\"Name\": \"teste3\"}}" 
+json=None</msg>
+<msg timestamp="20191026 09:37:41.722" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20191026 09:37:41.731" starttime="20191026 09:37:41.692"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESPOSTA.text}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.731" level="INFO">{
+  "detail": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.",
+  "status": 404,
+  "title": "Not Found",
+  "type": "about:blank"
+}
+</msg>
+<status status="PASS" endtime="20191026 09:37:41.732" starttime="20191026 09:37:41.731"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${RESPOSTA}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.732" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20191026 09:37:41.732" starttime="20191026 09:37:41.732"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.732" starttime="20191026 09:37:41.691"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.742" critical="yes" starttime="20191026 09:37:41.690"></status>
+</test>
+<test id="s1-t5" name="CTO5 - Deletar membres - (DELETE)">
+<kw name="Deletar por id &quot;1&quot;" library="ResourceAPI">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>content-type=application/json</arg>
+</arguments>
+<assign>
+<var>${HEADERS}</var>
+</assign>
+<msg timestamp="20191026 09:37:41.751" level="INFO">${HEADERS} = {u'content-type': u'application/json'}</msg>
+<status status="PASS" endtime="20191026 09:37:41.751" starttime="20191026 09:37:41.750"></status>
+</kw>
+<kw name="Delete Request" library="RequestsLibrary">
+<doc>Send a DELETE request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>Testsapi</arg>
+<arg>teams/${ID_MEMBERS}</arg>
+<arg>headers=${HEADERS}</arg>
+</arguments>
+<assign>
+<var>${RESPOSTA}</var>
+</assign>
+<msg timestamp="20191026 09:37:41.751" level="INFO">DELETE Request using : uri=teams/1, params=None, timeout=None, allow_redirects=True
+headers={'Connection': 'keep-alive', u'content-type': u'application/json', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.22.0'} 
+data=None 
+json=None</msg>
+<msg timestamp="20191026 09:37:41.776" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20191026 09:37:41.776" starttime="20191026 09:37:41.751"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESPOSTA.text}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.781" level="INFO">{
+  "detail": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.",
+  "status": 404,
+  "title": "Not Found",
+  "type": "about:blank"
+}
+</msg>
+<status status="PASS" endtime="20191026 09:37:41.781" starttime="20191026 09:37:41.776"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${RESPOSTA}</arg>
+</arguments>
+<msg timestamp="20191026 09:37:41.787" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" endtime="20191026 09:37:41.787" starttime="20191026 09:37:41.781"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.787" starttime="20191026 09:37:41.750"></status>
+</kw>
+<status status="PASS" endtime="20191026 09:37:41.794" critical="yes" starttime="20191026 09:37:41.744"></status>
+</test>
+<doc>Documentacao da API: http://localhost:5000/api/ui</doc>
+<status status="PASS" endtime="20191026 09:37:41.797" starttime="20191026 09:37:41.132"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="5">Critical Tests</stat>
+<stat fail="0" pass="5">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="TestCase" pass="5">TestCase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
