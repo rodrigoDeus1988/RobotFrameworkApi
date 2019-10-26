@@ -7,11 +7,14 @@ Suite Setup        Conectar a minha API
 *** Test Case ***
 
 CTO1 - Cadastrar membres - (POST)
-    cadastrar um novo members
+    Cadastrar um novo members
 
 CTO2 - Consultar todos members - (GET)
-    consultar members
-    conferir status code         404
+    Consultar members
+    Conferir status code         404
 
 CTO3 - Consultar members ID - (GET)
-    consultar por id "1"  
+    Consultar por id "1"
+
+CTO4 - Alterar membres - (PUT) 
+    Alterar um novo members "1"
