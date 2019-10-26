@@ -15,7 +15,15 @@ Conectar a minha API
 
 
 ###Acoes ###
-consultar membres
+cadastrar um novo members
+    ${HEADERS}     Create Dictionary      content-type=application/json
+    ${RESPOSTA}    Post Request           Testsapi    teams
+    ...                                   data={{"creator": 1,"description": "Teste_1","id": "1","members": [{}],"name": "TI","profile_photo": "Perfil"}}
+    ...                                   headers=${HEADERS}
+    Log                     ${RESPOSTA.text}
+    Set Test Variable       ${RESPOSTA}
+
+consultar members
     ${RESPOSTA}             Get Request    Testsapi    teams
     Log                     ${RESPOSTA.text}
     Set Test Variable       ${RESPOSTA}

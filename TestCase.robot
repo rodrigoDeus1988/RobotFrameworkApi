@@ -5,9 +5,9 @@ Suite Setup        Conectar a minha API
 
 
 *** Test Case ***
-CTOO1 - Consultar todos membres (GET)
-    consultar membres
+CTOO1 - Consultar todos members - (GET)
+    consultar members
     conferir status code         404
 
-#CTOO2 - Cadastrar membres
-#    cadastrar um novo membres
+CTOO2 - Cadastrar membres - (POST) 
+    cadastrar um novo members
