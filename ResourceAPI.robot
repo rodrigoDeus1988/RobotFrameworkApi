@@ -42,7 +42,14 @@ Alterar um novo members "${ID_MEMBERS}"
     Log                                   ${RESPOSTA.text}
     Set Test Variable                     ${RESPOSTA}
 
-###Conferencias 
+Deletar por id "${ID_MEMBERS}"
+    ${HEADERS}     Create Dictionary      content-type=application/json
+    ${RESPOSTA}    Delete Request         Testsapi    teams/${ID_MEMBERS}
+    ...                                   headers=${HEADERS}
+    Log                                   ${RESPOSTA.text}
+    Set Test Variable                     ${RESPOSTA}  
+
+###Conferencias
 conferir status code
   [Arguments]                   ${STATUSCODE_DESEJADO}
   Should Be Equal As Strings    ${RESPOSTA.status_code}    ${STATUSCODE_DESEJADO}

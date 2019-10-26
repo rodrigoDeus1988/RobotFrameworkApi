@@ -6,7 +6,7 @@ Suite Setup        Conectar a minha API
 
 *** Test Case ***
 
-CTO1 - Cadastrar membres - (POST)
+CTO1 - Cadastrar members - (POST)
     Cadastrar um novo members
 
 CTO2 - Consultar todos members - (GET)
@@ -16,5 +16,8 @@ CTO2 - Consultar todos members - (GET)
 CTO3 - Consultar members ID - (GET)
     Consultar por id "1"
 
-CTO4 - Alterar membres - (PUT) 
+CTO4 - Alterar members - (PUT) 
     Alterar um novo members "1"
+
+CTO5 - Deletar membres - (DELETE)
+    Deletar por id "1"
