@@ -1,0 +1,4 @@
+# Ignore log, output, and report files
+log.html
+output.xml
+report.html
