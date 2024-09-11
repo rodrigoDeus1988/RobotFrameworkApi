@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-09-10T23:29:05.404267" rpa="false" schemaversion="5">
+<suite id="s1" name="test consultaCNPJ" source="C:\Projetos\RobotFrameworkApi\api\tests\test_consultaCNPJ.robot">
+<test id="s1-t1" name="Testar API de CNPJ" line="8">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-09-10T23:29:05.906917" level="INFO">Creating Session using : alias=api_session, url=https://www.receitaws.com.br/v1/cnpj, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api_session</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-09-10T23:29:05.906917" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-09-10T23:29:06.677039" level="INFO">GET Request : url=https://www.receitaws.com.br/v1/cnpj/09464032000112 
+ path_url=/v1/cnpj/09464032000112 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-10T23:29:06.679203" level="INFO">GET Response : url=https://www.receitaws.com.br/v1/cnpj/09464032000112 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 11 Sep 2024 02:28:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Vary': 'Origin', 'X-RateLimit-Limit': '3', 'X-RateLimit-Remaining': '2', 'ETag': 'W/"67c-KuQyyqDfsjLpJmYlWPsDuw"', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Slwt6eRBFWOe4U3Q7oo%2Fsbq2Z0f8dGRSjZfMIQQwTvdgnTLJKZo17d26spT51n9QXCvzlHBsAPvTxApvasNQbWRDAs5dZh4w9tTSK5P3Ew6W5gVcDkRh%2F5zhWJjq0itIwBbwlLU%2FQwIw8NR0uhqucJty"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c1439823f9a1aba-GRU', 'Content-Encoding': 'gzip'} 
+ body={
+  "atividade_principal": [
+    {
+      "code": "64.36-1-00",
+      "text": "Sociedades de crédito, financiamento e investimento - financeiras"
+    }
+  ],
+  "data_situacao": "17/03/2008",
+  "complemento": "ANDAR 15/PARTE EDIF PINHEIROSONE",
+  "tipo": "MATRIZ",
+  "nome": "MIDWAY S.A.- CREDITO, FINANCIAMENTO E INVESTIMENTO",
+  "uf": "SP",
+  "abertura": "17/03/2008",
+  "telefone": "(11) 2281-2442",
+  "email": "tributario@riachuelo.com.br",
+  "atividades_secundarias": [
+    {
+      "code": "66.19-3-99",
+      "text": "Outras atividades auxiliares dos serviços financeiros não especificadas anteriormente"
+    }
+  ],
+  "qsa": [
+    {
+      "nome": "FRANCISCO AURELIO DOS SANTOS",
+      "qual": "10-Diretor"
+    },
+    {
+      "nome": "SILVANA LAVACCA ARCURI",
+      "qual": "10-Diretor"
+    }
+  ],
+  "situacao": "ATIVA",
+  "bairro": "BUTANTA",
+  "logradouro": "R LEMOS MONTEIRO",
+  "numero": "120",
+  "cep": "05.501-050",
+  "municipio": "SAO PAULO",
+  "porte": "DEMAIS",
+  "natureza_juridica": "205-4 - Sociedade Anônima Fechada",
+  "fantasia": "MIDWAY",
+  "cnpj": "09.464.032/0001-12",
+  "ultima_atualizacao": "2024-09-10T22:51:21.091Z",
+  "status": "OK",
+  "efr": "",
+  "motivo_situacao": "",
+  "situacao_especial": "",
+  "data_situacao_especial": "",
+  "capital_social": "600000000.00",
+  "simples": {
+    "optante": false,
+    "data_opcao": null,
+    "data_exclusao": null,
+    "ultima_atualizacao": "2024-08-10T23:59:59.000Z"
+  },
+  "simei": {
+    "optante": false,
+    "data_opcao": null,
+    "data_exclusao": null,
+    "ultima_atualizacao": "2024-08-10T23:59:59.000Z"
+  },
+  "extra": {},
+  "billing": {
+    "free": true,
+    "database": true
+  }
+} 
+ </msg>
+<msg time="2024-09-10T23:29:06.679316" level="INFO">C:\Users\rodri\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.receitaws.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-09-10T23:29:06.680684" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>/09464032000112</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-09-10T23:29:05.906917" elapsed="0.773767"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-09-10T23:29:06.680684" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-10T23:29:06.680684" elapsed="0.000000"/>
+</kw>
+<doc>Testa a API de CNPJ para um CNPJ específico</doc>
+<status status="PASS" start="2024-09-10T23:29:05.905727" elapsed="0.774957"/>
+</test>
+<status status="PASS" start="2024-09-10T23:29:05.404267" elapsed="1.276417"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="test consultaCNPJ">test consultaCNPJ</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

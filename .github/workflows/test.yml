@@ -20,4 +20,4 @@ jobs:
           pip install robotframework-requests
 
       - name: Run Robot tests
-        run: robot test_consultaCNPJ.robot
+        run: robot api/tests/test_consultaCNPJ.robot
